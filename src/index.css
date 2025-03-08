@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+:root {
+  --blackDark: #12131a;
+  --blackLight: #21222c;
+  --grayDark: #2a2b37;
+  --grayLight: #404254;
+  --silver: #e4e4ef;
+  --silverLight: #f2f2f7;
+  --white: #ffffff;
+  --purple: #d3a0fa;
+  --purpleDark: #c27cf8;
+  --yellow: #ff9f00;
+  --orange: #fe8159;
+  --orangeDark: #da3701;
+}
+
+.app-container {
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.app-container.dark-mode {
+  background-color: var(--blackDark);
+  color: var(--white);
+}
+
+.app-container.light-mode {
+  background-color: var(--white);
+  color: var(--blackDark);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 30px; 
+  position: sticky;
+  top: 0;
+  background-color: var(--blackDark);
+  
+}
+
+.app-container.light-mode .header {
+  background-color: var(--white);
+}
+
+.logo {
+  height: 40px;
+}
+
+.theme-toggle {
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--silver);
+}
+
+.theme-toggle.dark-mode {
+  background-color: var(--blackDark);
+}
+
+.counter-container {
+  padding: 32px 16px;
+}
+
+.counter-value {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.counter-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.letter-density-container {
+  margin-top: 16px;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.letter-density-header {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.letter-density-list {
+  margin-top: 8px;
+  overflow-x: auto;
+}
+
+.letter-density-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 6px;
+  margin: 4px 0;
+}
+
+.letter-density-letter {
+  font-weight: 700;
+}
+
+.letter-density-bar-container {
+  margin-left: 8px;
+  border-radius: 6px;
+  width: 100%;
+  height: 16px;
+  background-color: var(--silver);
+}
+
+.letter-density-bar {
+  border-radius: 6px;
+  height: 100%;
+  background-color: var(--purple);
+}
+
+.letter-density-count {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.no-characters-found {
+  font-style: italic;
+  color: var(--grayLight);
+}
+
+.see-more-button {
+  margin-top: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: var(--purple);
+  color: var(--white);
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+}
+
+.see-more-button:hover {
+  background-color: var(--purpleDark);
+}
+
+.letter-counter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.letter-counter-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin: 32px 0;
+}
+
+.letter-counter-textarea {
+  width: 100%;
+  height: 192px;
+  border-radius: 6px;
+  padding: 8px;
+  border: 1px solid var(--grayDark);
+  background-color: var(--grayDark);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.letter-counter-textarea.light-mode {
+  background-color: var(--silver);
+  color: var(--blackDark);
+}
+
+.letter-counter-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  gap: 16px;
+}
+
+.letter-counter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.letter-counter-input {
+  border: 1px solid var(--grayDark);
+  border-radius: 6px;
+  padding: 4px 8px;
+  width: 80px;
+  background-color: var(--grayDark);
+  color: var(--white);
+}
+
+.letter-counter-input.light-mode {
+  background-color: var(--silver);
+  color: var(--blackDark);
+}
+
+.letter-counter-reading-time {
+  font-size: 14px;
+  color: var(--grayLight);
+}
+
+.letter-counter-counters {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+
+@media (min-width: 768px) {
+  .letter-counter-counters {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.letter-counter-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 16px;
+}
+
+.letter-counter-card.bg-purple {
+  background-color: var(--purple);
+}
+
+.letter-counter-card.bg-yellow {
+  background-color: var(--yellow);
+}
+
+.letter-counter-card.bg-orange {
+  background-color: var(--orange);
+}
+
+.letter-counter-icon {
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 768px) {
+  .header {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: 30px;
+    padding-left: 105px;
+  }
+
+  .theme-toggle {
+    padding: 6px;
+  }
+
+  .counter-value {
+    font-size: 48px;
+  }
+
+  .counter-title {
+    font-size: 16px;
+  }
+
+  .letter-density-container {
+    padding: 12px;
+  }
+
+  .letter-density-header {
+    font-size: 16px;
+  }
+
+  .letter-density-count {
+    gap: 8px;
+  }
+
+  .letter-counter-title {
+    font-size: 24px;
+  }
+
+  .letter-counter-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .letter-counter-input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* .header {
+    flex-direction: column
+  } */
+
+  .logo {
+    height: 20px;
+    padding-left: 35px;
+  }
+
+  .counter-value {
+    font-size: 36px;
+  }
+
+  .counter-title {
+    font-size: 14px;
+  }
+
+  .letter-density-container {
+    padding: 8px;
+  }
+
+  .letter-density-header {
+    font-size: 14px;
+  }
+
+  .letter-density-count {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .letter-counter-title {
+    font-size: 20px;
+  }
+
+  .letter-counter-counters {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .theme-toggle {
+    display: block; 
+  }
+}
+
+
